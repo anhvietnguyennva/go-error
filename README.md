@@ -1,19 +1,19 @@
-# KyberSwap Error Lib
+# GO Error Lib
 
 ## Overview
-This is the library that defines errors and error handlers for KyberSwap
+This is the library that defines errors and error handlers for Golang API application
 
 ## Add this lib to your project
 - Step 1: 
 ```
-$ export GOPRIVATE=github.com/KyberNetwork/kyberswap-error
+$ export GOPRIVATE=github.com/anhvietnguyennva/go-error
 ```
 - Step 2: Add file `tools/tools.go` with content:
 ```
 package tools
 
 import (
-	_ "github.com/KyberNetwork/kyberswap-error/tools"
+	_ "github.com/anhvietnguyennva/go-error/tools"
 )
 ```
 - Step 3: 
@@ -24,7 +24,7 @@ $ go mod vendor
 
 ## Update to latest version
 ```
-$ go get -u github.com/KyberNetwork/kyberswap-error
+$ go get -u github.com/anhvietnguyennva/go-error
 $ go mod vendor
 ```
 
@@ -46,8 +46,8 @@ package main
 import (
 	"fmt"
 	
-	"github.com/KyberNetwork/kyberswap-error/pkg/errors"
-	t "github.com/KyberNetwork/kyberswap-error/pkg/transformer"
+	"github.com/anhvietnguyennva/go-error/pkg/errors"
+	t "github.com/anhvietnguyennva/go-error/pkg/transformer"
 )
 
 func main() {
@@ -70,7 +70,7 @@ package main
 import (
 	"net/http"
 	
-	"github.com/KyberNetwork/kyberswap-error/pkg/errors"
+	"github.com/anhvietnguyennva/go-error/pkg/errors"
 )
 
 const (
@@ -97,7 +97,7 @@ package main
 import (
 	"net/http"
 	
-	"github.com/KyberNetwork/kyberswap-error/pkg/errors"
+	"github.com/anhvietnguyennva/go-error/pkg/errors"
 )
 
 const (
@@ -123,7 +123,7 @@ func main() {
 }
 ```
 - NOTE: 
-  - Each error should have a unique error code. Otherwise, it can lead to unexpected results when transforming. So You should not define your custom error code as one of the predefined error codes in "kyberswap-error". The list of those predefined error codes can be found at https://www.notion.so/kybernetwork/API-Standards-proposal-draft-e8d8bf2dc5f647e89d2bf1b5f0ef8bdf
+  - Each error should have a unique error code. Otherwise, it can lead to unexpected results when transforming. So You should not define your custom error code as one of the predefined error codes in "go-error".
   - The `ClientErrorCode` should contain information about HTTP Status. It makes the error code more meaningful
   - Registering new `InfraError` is done in a similar way
 
