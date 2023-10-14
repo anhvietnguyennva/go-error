@@ -141,3 +141,10 @@ func NewInfraErrorElsNotFound(rootCause error, entities ...string) *InfraError {
 func NewInfraErrorUnknown(rootCause error, entities ...string) *InfraError {
 	return NewInfraError(c.InfraErrCodeUnknown, c.InfraErrMsgUnknown, entities, rootCause)
 }
+
+func NewInfraErrUnknownWithMsg(msg string, rootCause error, entities ...string) *InfraError {
+	if msg == "" {
+		msg = c.InfraErrMsgUnknown
+	}
+	return NewInfraError(c.InfraErrCodeUnknown, msg, entities, rootCause)
+}
