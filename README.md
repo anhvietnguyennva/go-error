@@ -96,8 +96,9 @@ package main
 
 import (
 	"net/http"
-	
+
 	"github.com/anhvietnguyennva/go-error/pkg/errors"
+	"github.com/anhvietnguyennva/go-error/pkg/transformers"
 )
 
 const (
@@ -106,7 +107,7 @@ const (
 
 	ClientErrCodeCustomized = 40099
 	ClientErrMsgCustomized  = "Customized client error"
-) 
+)
 
 func NewDomainErrCustomized(rootCause error, entities ...string) *errors.DomainError {
 	return errors.NewDomainError(DomainErrCodeCustomized, DomainErrMsgCustomized, entities, rootCause)
@@ -118,8 +119,8 @@ func NewRestAPIErrCustomized(rootCause error, entities ...string) *errors.RestAP
 }
 
 func main() {
-	transformer := transformers.RestTransformerInstance()
-	transformer.RegisterTransformFunc(DomainErrCodeCustomized, NewRestAPIErrCustomized)
+	t := transformers.RestTransformerInstance()
+	t.RegisterTransformFunc(DomainErrCodeCustomized, NewRestAPIErrCustomized)
 }
 ```
 - NOTE: 

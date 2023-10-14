@@ -3,7 +3,7 @@ package errors
 import (
 	"fmt"
 
-	c "github.com/anhvietnguyennva/go-error/pkg/constant"
+	c "github.com/anhvietnguyennva/go-error/pkg/constants"
 )
 
 type DomainError struct {

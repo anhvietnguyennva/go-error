@@ -1,4 +1,4 @@
-package constant
+package constants
 
 const (
 	InfraErrCodeDBConnect = "INFRA:DATABASE:CONNECT"

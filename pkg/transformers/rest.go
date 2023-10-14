@@ -1,4 +1,4 @@
-package transformer
+package transformers
 
 import (
 	"encoding/json"
@@ -9,7 +9,7 @@ import (
 
 	"github.com/go-playground/validator/v10"
 
-	c "github.com/anhvietnguyennva/go-error/pkg/constant"
+	c "github.com/anhvietnguyennva/go-error/pkg/constants"
 	"github.com/anhvietnguyennva/go-error/pkg/errors"
 )
 

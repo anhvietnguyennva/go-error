@@ -1,4 +1,4 @@
-package constant
+package constants
 
 const (
 	DomainErrCodeRequired = "DOMAIN:REQUIRED"
