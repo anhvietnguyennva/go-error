@@ -31,13 +31,13 @@ $ go mod vendor
 ## How to use
 
 ### `InfraError`
-These errors should be used in the infra layer (repository) of your service
+These errors should be used in the infra layer (repository) of your service.
 
 ### `DomainError`
-These errors should be used in the domain layer of your service
+These errors should be used in the domain layer of your service.
 
 ### `RestAPIError`
-These errors should be used in the application interface of your service
+These errors should be used in the application interface of your service.
 
 ### Transforms DomainError to RestAPIError
 ```
@@ -58,7 +58,7 @@ func main() {
 }
 ```
 - NOTE
-  - Transforming `InfraError` to `DomainError` is done in a similar way
+  - Transforming `InfraError` to `DomainError` is done in a similar way.
   - Transform errors flow: `InfraError`(if exists) => `DomainError` => `ClientError (RestAPIError, RPCError)`
 
 ### Register new DomainError and new RestAPIError
