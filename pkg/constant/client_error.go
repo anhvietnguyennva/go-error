@@ -1,4 +1,4 @@
-package constants
+package constant
 
 const (
 	// HTTP 200 - OK

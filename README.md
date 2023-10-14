@@ -98,7 +98,7 @@ import (
 	"net/http"
 
 	"github.com/anhvietnguyennva/go-error/pkg/errors"
-	"github.com/anhvietnguyennva/go-error/pkg/transformers"
+	"github.com/anhvietnguyennva/go-error/pkg/transformer"
 )
 
 const (
@@ -119,7 +119,7 @@ func NewRestAPIErrCustomized(rootCause error, entities ...string) *errors.RestAP
 }
 
 func main() {
-	t := transformers.RestTransformerInstance()
+	t := transformer.RestTransformerInstance()
 	t.RegisterTransformFunc(DomainErrCodeCustomized, NewRestAPIErrCustomized)
 }
 ```

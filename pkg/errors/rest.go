@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"strings"
 
-	c "github.com/anhvietnguyennva/go-error/pkg/constants"
+	c "github.com/anhvietnguyennva/go-error/pkg/constant"
 )
 
 type RestAPIError struct {

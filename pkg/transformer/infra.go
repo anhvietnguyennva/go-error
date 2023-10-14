@@ -1,9 +1,9 @@
-package transformers
+package transformer
 
 import (
 	"fmt"
 
-	c "github.com/anhvietnguyennva/go-error/pkg/constants"
+	c "github.com/anhvietnguyennva/go-error/pkg/constant"
 	"github.com/anhvietnguyennva/go-error/pkg/errors"
 )
 
