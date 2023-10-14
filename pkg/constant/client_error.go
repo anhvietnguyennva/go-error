@@ -3,7 +3,7 @@ package constant
 const (
 	// HTTP 200 - OK
 	ClientErrCodeOK = 0
-	ClientErrMsgOK  = "Succeeded"
+	ClientErrMsgOK  = "Successfully"
 
 	//HTTP 400 - Bad Request
 	ClientErrCodeRequired = 4000
