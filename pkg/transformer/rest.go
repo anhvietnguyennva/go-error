@@ -11,6 +11,7 @@ import (
 
 	"github.com/telifi/go-error/pkg/constant"
 	e "github.com/telifi/go-error/pkg/error"
+	"github.com/telifi/go-error/pkg/util/str"
 )
 
 type IRestTransformer interface {
@@ -74,12 +75,12 @@ func (t *restTransformer) ValidationErrToRestAPIErr(err error) *e.RestAPIError {
 	var numErr *strconv.NumError
 	if errs.As(err, &validationErrs) {
 		validationErr := validationErrs[0]
-		return t.apiErrForTag(validationErr.Tag(), err, validationErr.Field())
+		return t.apiErrForTag(validationErr.Tag(), err, str.ToLowerFirstLetter(validationErr.Field()))
 	}
 	if errs.As(err, &unmarshalTypeErr) {
 		field := unmarshalTypeErr.Field
 		fieldArr := strings.Split(field, ".")
-		return e.NewRestAPIErrInvalidFormat(err, fieldArr[len(fieldArr)-1])
+		return e.NewRestAPIErrInvalidFormat(err, str.ToLowerFirstLetter(fieldArr[len(fieldArr)-1]))
 	}
 	if errs.As(err, &jsonSynTaxErr) {
 		return e.NewRestAPIErrInvalidFormat(err)
