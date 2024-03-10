@@ -7,6 +7,7 @@ import (
 	"strconv"
 	"strings"
 
+	"github.com/gin-gonic/gin/binding"
 	"github.com/go-playground/validator/v10"
 
 	"github.com/telifi/go-error/pkg/constant"
@@ -69,13 +70,27 @@ func RestTransformerInstance() IRestTransformer {
 // ValidationErrToRestAPIErr transforms ValidationError to RestAPIError
 // this function will be used when bind JSON request to DTO in gin framework
 func (t *restTransformer) ValidationErrToRestAPIErr(err error) *e.RestAPIError {
+	var sliceValidationErr binding.SliceValidationError
 	var validationErrs validator.ValidationErrors
 	var unmarshalTypeErr *json.UnmarshalTypeError
 	var jsonSynTaxErr *json.SyntaxError
 	var numErr *strconv.NumError
+	if errs.As(err, &sliceValidationErr) {
+		if len(sliceValidationErr) > 0 {
+			err := sliceValidationErr[0]
+			if errs.As(err, &validationErrs) {
+				if len(validationErrs) > 0 {
+					validationErr := validationErrs[0]
+					return t.apiErrForTag(validationErr.Tag(), err, str.ToLowerFirstLetter(validationErr.Field()))
+				}
+			}
+		}
+	}
 	if errs.As(err, &validationErrs) {
-		validationErr := validationErrs[0]
-		return t.apiErrForTag(validationErr.Tag(), err, str.ToLowerFirstLetter(validationErr.Field()))
+		if len(validationErrs) > 0 {
+			validationErr := validationErrs[0]
+			return t.apiErrForTag(validationErr.Tag(), err, str.ToLowerFirstLetter(validationErr.Field()))
+		}
 	}
 	if errs.As(err, &unmarshalTypeErr) {
 		field := unmarshalTypeErr.Field
