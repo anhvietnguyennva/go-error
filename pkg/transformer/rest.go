@@ -10,9 +10,9 @@ import (
 	"github.com/gin-gonic/gin/binding"
 	"github.com/go-playground/validator/v10"
 
-	"github.com/telifi/go-error/pkg/constant"
-	e "github.com/telifi/go-error/pkg/error"
-	"github.com/telifi/go-error/pkg/util/str"
+	"github.com/Tempest-Finance/go-error/pkg/constant"
+	e "github.com/Tempest-Finance/go-error/pkg/error"
+	"github.com/Tempest-Finance/go-error/pkg/util/str"
 )
 
 type IRestTransformer interface {

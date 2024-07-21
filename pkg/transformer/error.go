@@ -3,8 +3,8 @@ package transformer
 import (
 	"fmt"
 
-	"github.com/telifi/go-error/pkg/constant"
-	e "github.com/telifi/go-error/pkg/error"
+	"github.com/Tempest-Finance/go-error/pkg/constant"
+	e "github.com/Tempest-Finance/go-error/pkg/error"
 )
 
 type IErrorTransformer interface {

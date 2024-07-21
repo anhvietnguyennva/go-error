@@ -3,8 +3,8 @@ package main
 import (
 	"net/http"
 
-	e "github.com/telifi/go-error/pkg/error"
-	"github.com/telifi/go-error/pkg/transformer"
+	e "github.com/Tempest-Finance/go-error/pkg/error"
+	"github.com/Tempest-Finance/go-error/pkg/transformer"
 )
 
 const (

@@ -1,4 +1,4 @@
-module github.com/telifi/go-error
+module github.com/Tempest-Finance/go-error
 
 go 1.21.0
 
