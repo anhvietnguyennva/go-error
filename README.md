@@ -6,14 +6,14 @@ This is the library that defines errors and error handlers for Go application
 ## Add this lib to your project
 - Step 1: 
 ```
-$ export GOPRIVATE=github.com/Tempest-Finance/go-error
+$ export GOPRIVATE=github.com/anhvietnguyennva/go-error
 ```
 - Step 2: Add file `tool/tool.go` with content:
 ```
 package tool
 
 import (
-	_ "github.com/Tempest-Finance/go-error/tool"
+	_ "github.com/anhvietnguyennva/go-error/tool"
 )
 ```
 - Step 3: 
@@ -24,7 +24,7 @@ $ go mod vendor
 
 ## Update to latest version
 ```
-$ go get -u github.com/Tempest-Finance/go-error
+$ go get -u github.com/anhvietnguyennva/go-error
 $ go mod vendor
 ```
 
@@ -43,8 +43,8 @@ package main
 import (
 	"fmt"
 
-	"github.com/Tempest-Finance/go-error/pkg/error"
-	t "github.com/Tempest-Finance/go-error/pkg/transformer"
+	"github.com/anhvietnguyennva/go-error/pkg/error"
+	t "github.com/anhvietnguyennva/go-error/pkg/transformer"
 )
 
 func main() {
@@ -65,7 +65,7 @@ package main
 import (
 	"net/http"
 
-	e "github.com/Tempest-Finance/go-error/pkg/error"
+	e "github.com/anhvietnguyennva/go-error/pkg/error"
 )
 
 const (
@@ -93,8 +93,8 @@ package main
 import (
 	"net/http"
 
-	e "github.com/Tempest-Finance/go-error/pkg/error"
-	"github.com/Tempest-Finance/go-error/pkg/transformer"
+	e "github.com/anhvietnguyennva/go-error/pkg/error"
+	"github.com/anhvietnguyennva/go-error/pkg/transformer"
 )
 
 const (

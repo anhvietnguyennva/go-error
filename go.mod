@@ -1,4 +1,4 @@
-module github.com/Tempest-Finance/go-error
+module github.com/anhvietnguyennva/go-error
 
 go 1.21.0
 

@@ -3,7 +3,7 @@ package error
 import (
 	"fmt"
 
-	"github.com/Tempest-Finance/go-error/pkg/constant"
+	"github.com/anhvietnguyennva/go-error/pkg/constant"
 )
 
 type Error struct {
